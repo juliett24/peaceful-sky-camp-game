@@ -22,11 +22,18 @@ public class ScrapballContents : MonoBehaviour
         private set;
     } = 1f;
 
+    public void Awake()
+    {
+        var scrap = gameObject.AddComponent<AttachableScrap>();
+        scrap.Scrapball = this;
+    }
+
     public void AttachObject(GameObject obj)
     {
-        var body = obj.AddComponent<Rigidbody>();
-        var joint = obj.AddComponent<FixedJoint>();
-        joint.connectedBody = _body;
+        if (obj.GetComponent<AttachableScrap>()) return;
+
+        var scrap = obj.AddComponent<AttachableScrap>();
+        scrap.Scrapball = this;
 
         // TODO: fix this. Only increments radius once.
         var volumeIncrement = 4f;
@@ -42,15 +49,6 @@ public class ScrapballContents : MonoBehaviour
             x.MovePosition(origin + Vector3.Lerp(pos, pos.normalized * radiusForScrap, _roundness));
             x.isKinematic = false;
         }
-        _attachedObjects.Add(body);
-    }
-
-    public void OnCollisionEnter(Collision collision)
-    {
-        var obj = collision.gameObject;
-        if (obj.tag == "ScrapAttachable")
-        {
-            AttachObject(obj);
-        }
+        _attachedObjects.Add(scrap.GetComponent<Rigidbody>());
     }
 }
