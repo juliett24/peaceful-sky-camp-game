@@ -33,6 +33,7 @@ public class ScrapballContents : MonoBehaviour
 
     [TooltipAttribute("The list of attached Scrap objects.")]
     [SerializeField] private List<GameObject> _attachedObjects = new List<GameObject>();
+    [SerializeField] private float _selfDestructForce = 20f;
 
     public float CoreVolume {
         get => 4f / 3f * Mathf.PI * CoreRadius * CoreRadius * CoreRadius;
@@ -54,6 +55,25 @@ public class ScrapballContents : MonoBehaviour
         foreach (var x in _attachedObjects)
         {
             AttachObject(x, false);
+        }
+    }
+
+    public void OnSelfDestruct(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            var position = transform.position;
+            foreach (var x in _attachedObjects)
+            {
+                Destroy(x.GetComponent<FixedJoint>());
+                Destroy(x.GetComponent<AttachableScrap>());
+                var body = x.GetComponent<Rigidbody>();
+                var direction = (x.transform.position - position).normalized;
+                body.velocity = direction * _selfDestructForce;
+            }
+            CoreRadius = 1f;
+            MaxRadius = 1f;
+            _attachedObjects.Clear();
         }
     }
 

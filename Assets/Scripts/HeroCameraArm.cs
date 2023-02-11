@@ -18,7 +18,7 @@ public class HeroCameraArm : MonoBehaviour
     {
         Vector2 delta = context.ReadValue<Vector2>();
         CameraRotation += delta * _camSensitivity;
-        CameraRotation.y = Mathf.Clamp(CameraRotation.y, -90f, 90f);
+        CameraRotation.y = Mathf.Clamp(CameraRotation.y, -85f, 85f);
         transform.eulerAngles = new Vector3(
             -CameraRotation.y,
             CameraRotation.x,
