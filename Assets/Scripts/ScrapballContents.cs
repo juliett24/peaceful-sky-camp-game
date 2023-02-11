@@ -18,6 +18,8 @@ public class ScrapballContents : MonoBehaviour
     [Header("Volume")]
     [TooltipAttribute("How much volume the ball gains from Scrap (Multiplier).")]
     [SerializeField] private float _volumeGain = 1f;
+    [TooltipAttribute("How much mass the core Rigidbody gains from Scrap (Multiplier). Non-zero values make heavy scrap heaps easier to control.")]
+    [SerializeField] private float _massGain = 0f;
 
     [SerializeField] private ScaleMode _scaleMode = ScaleMode.None;
 
@@ -61,8 +63,10 @@ public class ScrapballContents : MonoBehaviour
 
         // TODO: fix this. Only increments radius once.
         var volumeIncrement = 4f * _volumeGain;
-        CoreVolume = CoreVolume + volumeIncrement;
+        CoreVolume += volumeIncrement;
+        _body.mass += volumeIncrement * _massGain;
         MaxRadius = Mathf.Max(MaxRadius, Vector3.Distance(obj.transform.position, transform.position));
+
         switch (_scaleMode)
         {
             case ScaleMode.All:
