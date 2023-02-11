@@ -67,9 +67,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f77fa6571fb2f40b6d6ad8fb1207af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _roundness: 1
-  _scrapInset: 1
   _body: {fileID: 1763255073502263780}
+  _collider: {fileID: 8078791785059178935}
+  _volumeGain: 1
+  _scaleMode: 1
+  _attachedObjects: []
 --- !u!54 &1763255073502263780
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -628,8 +630,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8041028793086128546}
-  - {fileID: 1393885616066817074}
   - {fileID: 2437656039307229072}
+  - {fileID: 1393885616066817074}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

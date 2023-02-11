@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class AttachableScrap : MonoBehaviour
 {
+    public Joint Joint { get; private set; }
     public ScrapballContents Scrapball {
         get => _scrapball;
         set
@@ -10,8 +11,8 @@ public class AttachableScrap : MonoBehaviour
             _scrapball = value;
             if (gameObject != value.gameObject)
             {
-                var joint = gameObject.AddComponent<FixedJoint>();
-                joint.connectedBody = value.GetComponent<Rigidbody>();
+                Joint = gameObject.AddComponent<FixedJoint>();
+                Joint.connectedBody = value.GetComponent<Rigidbody>();
             }
         }
     }
