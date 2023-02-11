@@ -32,11 +32,15 @@ public class ScrapballContents : MonoBehaviour
     [TooltipAttribute("The list of attached Scrap objects.")]
     [SerializeField] private List<GameObject> _attachedObjects = new List<GameObject>();
 
-    public float Volume {
-        get => 4f / 3f * Mathf.PI * Radius * Radius * Radius;
-        private set => Radius = Mathf.Pow(value / (4f / 3f * Mathf.PI), 0.33333f);
+    public float CoreVolume {
+        get => 4f / 3f * Mathf.PI * CoreRadius * CoreRadius * CoreRadius;
+        private set => CoreRadius = Mathf.Pow(value / (4f / 3f * Mathf.PI), 0.33333f);
     }
-    public float Radius {
+    public float CoreRadius {
+        get;
+        private set;
+    } = 1f;
+    public float MaxRadius {
         get;
         private set;
     } = 1f;
@@ -57,15 +61,16 @@ public class ScrapballContents : MonoBehaviour
 
         // TODO: fix this. Only increments radius once.
         var volumeIncrement = 4f * _volumeGain;
-        Volume = Volume + volumeIncrement;
+        CoreVolume = CoreVolume + volumeIncrement;
+        MaxRadius = Mathf.Max(MaxRadius, Vector3.Distance(obj.transform.position, transform.position));
         switch (_scaleMode)
         {
             case ScaleMode.All:
-                transform.localScale = Radius * 2f * Vector3.one;
+                transform.localScale = CoreRadius * 2f * Vector3.one;
                 break;
 
             case ScaleMode.ColliderOnly:
-                _collider.radius = Radius;
+                _collider.radius = CoreRadius;
                 break;
         }
 

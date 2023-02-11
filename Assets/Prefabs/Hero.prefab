@@ -50,7 +50,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33c12bde231642146b534239c1c2d4e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camSensitivity: 0.5
   _linearAccel: 10
   _angularAccel: 90
   _body: {fileID: 1763255073502263780}
@@ -70,7 +69,7 @@ MonoBehaviour:
   _body: {fileID: 1763255073502263780}
   _collider: {fileID: 8078791785059178935}
   _volumeGain: 1
-  _scaleMode: 1
+  _scaleMode: 0
   _attachedObjects: []
 --- !u!54 &1763255073502263780
 Rigidbody:
@@ -214,8 +213,8 @@ MonoBehaviour:
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5571412018364096886}
-        m_TargetAssemblyTypeName: HeroController, Assembly-CSharp
+      - m_Target: {fileID: 8059220080402554772}
+        m_TargetAssemblyTypeName: HeroCameraArm, Assembly-CSharp
         m_MethodName: OnLook
         m_Mode: 0
         m_Arguments:
@@ -409,6 +408,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8041028793086128546}
+  - component: {fileID: 8059220080402554772}
   - component: {fileID: 342032537328307610}
   - component: {fileID: 988330950264783668}
   m_Layer: 0
@@ -434,6 +434,20 @@ Transform:
   m_Father: {fileID: 5547119341713776756}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8059220080402554772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3898182062887803619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76973d7099dc1fc4b80c30ba0c4207d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ball: {fileID: 3452570412170589160}
+  _camSensitivity: 0.5
 --- !u!1818360608 &342032537328307610
 PositionConstraint:
   m_ObjectHideFlags: 0
@@ -629,9 +643,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1393885616066817074}
   - {fileID: 8041028793086128546}
   - {fileID: 2437656039307229072}
-  - {fileID: 1393885616066817074}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

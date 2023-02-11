@@ -28,7 +28,7 @@ public class HeroFollow : MonoBehaviour
         var pos1 = transform.position;
         _destPosition = _follow.position;
         transform.position = Vector3.Lerp(pos1, _destPosition, ratio)
-            + _destRotation * new Vector3(_ball.Radius + _followDistance, 0, 0);
+            + _destRotation * new Vector3(_ball.CoreRadius + _followDistance, 0, 0);
     }
 
     public void OnMove(InputAction.CallbackContext context)
