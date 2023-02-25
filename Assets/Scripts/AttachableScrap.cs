@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class AttachableScrap : MonoBehaviour
 {
-    public Joint Joint { get; private set; }
+    public const string SCRAP_TAG = "ScrapAttachable";
+
     public ScrapballContents Scrapball {
         get => _scrapball;
         set
@@ -11,20 +12,28 @@ public class AttachableScrap : MonoBehaviour
             _scrapball = value;
             if (gameObject != value.gameObject)
             {
-                Joint = gameObject.AddComponent<FixedJoint>();
-                Joint.connectedBody = value.GetComponent<Rigidbody>();
+                transform.parent = value.transform;
+                foreach(var x in GetComponents<Collider>())
+                {
+                    x.enabled = false;
+                }
             }
         }
     }
 
     private ScrapballContents _scrapball;
 
-    public void OnCollisionEnter(Collision collision)
+    private void Awake()
+    {
+        gameObject.tag = SCRAP_TAG;
+    }
+
+    public void OnTriggerEnter(Collider collider)
     {
         if (!_scrapball) return;
 
-        var obj = collision.gameObject;
-        if (obj.tag == "ScrapAttachable")
+        var obj = collider.gameObject;
+        if (obj.tag == SCRAP_TAG)
         {
             _scrapball.AttachObject(obj);
         }

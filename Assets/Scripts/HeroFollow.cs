@@ -48,7 +48,7 @@ public class HeroFollow : MonoBehaviour
         {
             _destRotation.SetFromToRotation(Vector3.right, inputXformed);
         }
-        _destPosition = _follow.position - transform.rotation * new Vector3(_ball.MaxRadius + _followDistance, 0, 0);
+        _destPosition = _follow.position - transform.rotation * new Vector3(_ball.CoreRadius + _followDistance, 0, 0);
     }
 
     private void PushOutWalls()
@@ -64,10 +64,10 @@ public class HeroFollow : MonoBehaviour
         var dirToFollow = (_follow.position - transform.position).normalized;
         var hitToward = Physics.SphereCast(
             dirToFollow, _bodyRadius,
-            Vector3.down, out var hitTowardInfo, _ball.MaxRadius + _followDistance);
+            Vector3.down, out var hitTowardInfo, _ball.CoreRadius + _followDistance);
         if (hitToward)
         {
-            transform.position = _follow.position + dirToFollow * (_ball.MaxRadius + _followDistance - hitTowardInfo.distance);
+            transform.position = _follow.position + dirToFollow * (_ball.CoreRadius + _followDistance - hitTowardInfo.distance);
         }
     }
 }

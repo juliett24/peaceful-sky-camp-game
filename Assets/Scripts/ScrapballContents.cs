@@ -24,15 +24,14 @@ public class ScrapballContents : MonoBehaviour
     [SerializeField] private ScaleMode _scaleMode = ScaleMode.None;
 
     [Header("Scrap")]
-    // // Currently broken, might fix if needed
-    // [TooltipAttribute("How closely Scrap objects conform to the sphere. 1 for full effect, 0 to prevent movement.")]
-    // [SerializeField] [Range(0, 1)] private float _roundness = 1f;
+    [TooltipAttribute("How closely Scrap objects conform to the sphere. 1 for full effect, 0 to prevent movement.")]
+    [SerializeField] [Range(0, 1)] private float _roundness = 1f;
 
-    // [TooltipAttribute("How deep Scrap objects are inset into the sphere, if Roundness is 1.")]
-    // [SerializeField] private float _scrapInset = 1f;
+    [TooltipAttribute("How deep Scrap objects are inset into the sphere, if Roundness is 1.")]
+    [SerializeField] private float _scrapInset = 1f;
 
     [TooltipAttribute("The list of attached Scrap objects.")]
-    [SerializeField] private List<GameObject> _attachedObjects = new List<GameObject>();
+    [SerializeField] private List<Transform> _attachedObjects = new List<Transform>();
     [SerializeField] private float _selfDestructForce = 20f;
 
     public float CoreVolume {
@@ -43,10 +42,6 @@ public class ScrapballContents : MonoBehaviour
         get;
         private set;
     } = 1f;
-    public float MaxRadius {
-        get;
-        private set;
-    } = 1f;
 
     public void Awake()
     {
@@ -54,7 +49,7 @@ public class ScrapballContents : MonoBehaviour
         scrap.Scrapball = this;
         foreach (var x in _attachedObjects)
         {
-            AttachObject(x, false);
+            AttachObject(x.gameObject, false);
         }
     }
 
@@ -65,27 +60,23 @@ public class ScrapballContents : MonoBehaviour
             var position = transform.position;
             foreach (var x in _attachedObjects)
             {
-                Destroy(x.GetComponent<FixedJoint>());
-                Destroy(x.GetComponent<AttachableScrap>());
                 var body = x.GetComponent<Rigidbody>();
                 var direction = (x.transform.position - position).normalized;
                 body.velocity = direction * _selfDestructForce;
             }
             CoreRadius = 1f;
-            MaxRadius = 1f;
             _attachedObjects.Clear();
         }
     }
 
     public void AttachObject(GameObject obj, bool addToList = true)
     {
-        if (obj.GetComponent<AttachableScrap>()) return;
+        var scrap = obj.GetComponent<AttachableScrap>();
+        if (!scrap) return;
 
-        // TODO: fix this. Only increments radius once.
         var volumeIncrement = 4f * _volumeGain;
         CoreVolume += volumeIncrement;
         _body.mass += volumeIncrement * _massGain;
-        MaxRadius = Mathf.Max(MaxRadius, Vector3.Distance(obj.transform.position, transform.position));
 
         switch (_scaleMode)
         {
@@ -100,26 +91,21 @@ public class ScrapballContents : MonoBehaviour
 
         ConformScrapToSphere();
 
-        var scrap = obj.AddComponent<AttachableScrap>();
         scrap.Scrapball = this;
         if (addToList)
         {
-            _attachedObjects.Add(obj);
+            _attachedObjects.Add(obj.transform);
         }
     }
 
     private void ConformScrapToSphere()
     {
-        // // Currently broken, might fix if needed some day
-
-        // var origin = transform.position;
-        // var radiusForScrap = Radius - _scrapInset;
-        // foreach(var x in _attachedObjects)
-        // {
-        //     x.isKinematic = true;
-        //     var pos = x.transform.position - origin;
-        //     x.MovePosition(origin + Vector3.Lerp(pos, pos.normalized * radiusForScrap, _roundness));
-        //     x.isKinematic = false;
-        // }
+        var origin = transform.position;
+        var radiusForScrap = CoreRadius - _scrapInset;
+        foreach(var x in _attachedObjects)
+        {
+            var pos = x.position - origin;
+            x.position = origin + Vector3.Lerp(pos, pos.normalized * radiusForScrap, _roundness);
+        }
     }
 }
