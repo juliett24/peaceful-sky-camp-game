@@ -5,6 +5,9 @@ public class AttachableScrap : MonoBehaviour
 {
     public const string SCRAP_TAG = "ScrapAttachable";
 
+    public float BallAddedMass = 1f;
+    public float BallAddedVolume = 1f;
+
     public ScrapballContents Scrapball {
         get => _scrapball;
         set
@@ -21,7 +24,7 @@ public class AttachableScrap : MonoBehaviour
         }
     }
 
-    private ScrapballContents _scrapball;
+    [SerializeField] private ScrapballContents _scrapball;
 
     private void Awake()
     {
