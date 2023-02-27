@@ -3,7 +3,7 @@ using UnityEngine;
 [ExecuteAlways]
 public class ScrapSpawner : MonoBehaviour
 {
-    [SerializeField] private bool _spawnOnStart = false;
+    [SerializeField] private bool _spawnOnStart = true;
     [SerializeField] private int _count = 50;
     [SerializeField] private float _totalRadius = 20f;
     [SerializeField] private float _solidRadius = 5f;
