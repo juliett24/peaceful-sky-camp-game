@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _core: {fileID: 3598533303026103996}
+  _collectingCollider: {fileID: 5781921267227123780}
   _body: {fileID: 812807122462858467}
   _bodyCollider: {fileID: 8078791785059178935}
   _collectorCollider: {fileID: 5781921267227123780}
@@ -155,7 +156,7 @@ MonoBehaviour:
   _bodyScale: 0.5
   _coreScale: 0.4
   _coreAddedRadius: -1
-  _roundness: 0.935
+  _roundness: 0.118
   _scrapInset: 1
   _attachedObjects: []
   _selfDestructForce: 20

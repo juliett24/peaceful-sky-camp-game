@@ -9,8 +9,12 @@ public class ScrapballContents : MonoBehaviour
         None, ColliderOnly, All,
     }
 
+    private const float VOLUME_RADIUS_RATIO = 2f; // Accurate formula: 3f
+
     [TooltipAttribute("The first attached AttachableScrap that should collect scrap. If empty, creates one on self.")]
     [SerializeField] AttachableScrap _core;
+    [TooltipAttribute("The collider to grow when scrap gets added.")]
+    [SerializeField] SphereCollider _collectingCollider;
 
     [TooltipAttribute("The attached Rigidbody.")]
     [SerializeField] private Rigidbody _body;
@@ -42,8 +46,8 @@ public class ScrapballContents : MonoBehaviour
     [SerializeField] private float _selfDestructForce = 20f;
 
     public float ScrapVolume {
-        get => 4f / 3f * Mathf.PI * _scrapRadius * _scrapRadius * _scrapRadius;
-        private set => ScrapRadius = Mathf.Pow(value / (4f / 3f * Mathf.PI), 0.33333f);
+        get => 4f / 3f * Mathf.PI * Mathf.Pow(_scrapRadius, VOLUME_RADIUS_RATIO);
+        private set => ScrapRadius = Mathf.Pow(value / (4f / 3f * Mathf.PI), 1 / VOLUME_RADIUS_RATIO);
     }
     public float ScrapRadius {
         get => _scrapRadius;
@@ -51,7 +55,7 @@ public class ScrapballContents : MonoBehaviour
         {
             _scrapRadius = value;
             _bodyCollider.radius = ScrapRadius * _bodyScale;
-            _core.transform.localScale = (ScrapRadius * _coreScale - _coreAddedRadius) * Vector3.one * 2f;
+            _collectingCollider.radius = ScrapRadius * _coreScale - _coreAddedRadius;
         }
     }
     private float _scrapRadius = 1f;
