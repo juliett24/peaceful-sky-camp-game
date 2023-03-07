@@ -4,11 +4,6 @@ using System.Collections.Generic;
 
 public class ScrapballContents : MonoBehaviour
 {
-    enum ScaleMode
-    {
-        None, ColliderOnly, All,
-    }
-
     private const float VOLUME_RADIUS_RATIO = 2f; // Accurate formula: 3f
 
     [TooltipAttribute("The first attached AttachableScrap that should collect scrap. If empty, creates one on self.")]
@@ -43,6 +38,7 @@ public class ScrapballContents : MonoBehaviour
 
     [TooltipAttribute("The list of attached Scrap objects.")]
     [SerializeField] private List<Transform> _attachedObjects = new List<Transform>();
+    [SerializeField] private UnityEngine.Events.UnityEvent<float> _radiusChanged; 
     [SerializeField] private float _selfDestructForce = 20f;
 
     public float ScrapVolume {
@@ -56,6 +52,7 @@ public class ScrapballContents : MonoBehaviour
             _scrapRadius = value;
             _bodyCollider.radius = ScrapRadius * _bodyScale;
             _collectingCollider.radius = ScrapRadius * _coreScale - _coreAddedRadius;
+            _radiusChanged.Invoke(value);
         }
     }
     private float _scrapRadius = 1f;

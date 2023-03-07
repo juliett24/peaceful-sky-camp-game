@@ -13,8 +13,9 @@ public class HeroController : MonoBehaviour
 
     public void Update()
     {
-        _body.velocity += Time.deltaTime * _cam.TransformDirection(new Vector3(_moveInput.x, 0, _moveInput.y)) * _linearAccel;
-        _body.angularVelocity += Time.deltaTime * _cam.TransformDirection(new Vector3(_moveInput.y, 0, -_moveInput.x)) * _angularAccel;
+        var camRotation = Quaternion.Euler(0, _cam.rotation.eulerAngles.y, 0);
+        _body.velocity += Time.deltaTime * (camRotation * new Vector3(_moveInput.x, 0, _moveInput.y) * _linearAccel);
+        _body.angularVelocity += Time.deltaTime * (camRotation * new Vector3(_moveInput.y, 0, -_moveInput.x) * _angularAccel);
     }
 
     public void OnMove(InputAction.CallbackContext context)

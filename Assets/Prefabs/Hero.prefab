@@ -159,6 +159,21 @@ MonoBehaviour:
   _roundness: 0.118
   _scrapInset: 1
   _attachedObjects: []
+  _radiusChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8059220080402554772}
+        m_TargetAssemblyTypeName: HeroCameraArm, Assembly-CSharp
+        m_MethodName: OnBallRadiusChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _selfDestructForce: 20
 --- !u!135 &8078791785059178935
 SphereCollider:
@@ -410,7 +425,7 @@ Transform:
   m_GameObject: {fileID: 3898182062887803619}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 23, y: 23, z: 23}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3876772356046736865}
@@ -430,7 +445,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ball: {fileID: 3452570412170589160}
-  _camSensitivity: 0.5
+  _camSensitivity: 0.25
+  _camDistanceBase: 22
+  _camDistanceScale: 1
   CameraRotation: {x: 0, y: 0}
 --- !u!1818360608 &342032537328307610
 PositionConstraint:
@@ -466,9 +483,9 @@ RotationConstraint:
   m_RotationOffset: {x: 0, y: 0, z: 0}
   m_AffectRotationX: 0
   m_AffectRotationY: 0
-  m_AffectRotationZ: 1
+  m_AffectRotationZ: 0
   m_Active: 1
-  m_IsLocked: 0
+  m_IsLocked: 1
   m_Sources:
   - sourceTransform: {fileID: 5547119341713776756}
     weight: 1
@@ -498,7 +515,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4708840257090626777}
   m_LocalRotation: {x: 0.14022829, y: -0, z: -0, w: 0.9901193}
-  m_LocalPosition: {x: 0, y: 7.8097687, z: -15.497986}
+  m_LocalPosition: {x: 0, y: 0.45, z: -0.893}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -627,9 +644,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8041028793086128546}
   - {fileID: 2437656039307229072}
   - {fileID: 1393885616066817074}
+  - {fileID: 8041028793086128546}
   - {fileID: 2216614690434105477}
   m_Father: {fileID: 0}
   m_RootOrder: 0
