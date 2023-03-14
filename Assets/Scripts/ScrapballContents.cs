@@ -16,6 +16,8 @@ public class ScrapballContents : MonoBehaviour
 
     [TooltipAttribute("The Rigidbody's SphereCollider, because this is a ball.")]
     [SerializeField] private SphereCollider _bodyCollider;
+    [TooltipAttribute("The object to attach scrap to, so they move with that object.")]
+    [SerializeField] public Transform AttachToTransform;
 
     [Header("Size")]
     [TooltipAttribute("How much mass the core Rigidbody gains from Scrap (Multiplier).")]

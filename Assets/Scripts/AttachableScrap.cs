@@ -15,7 +15,7 @@ public class AttachableScrap : MonoBehaviour
             _scrapball = value;
             if (gameObject != value.gameObject)
             {
-                transform.parent = value.transform;
+                transform.parent = value.AttachToTransform;
                 foreach(var x in GetComponents<Collider>())
                 {
                     x.enabled = false;
