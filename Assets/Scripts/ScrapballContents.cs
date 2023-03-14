@@ -9,15 +9,13 @@ public class ScrapballContents : MonoBehaviour
     [TooltipAttribute("The first attached AttachableScrap that should collect scrap. If empty, creates one on self.")]
     [SerializeField] AttachableScrap _core;
     [TooltipAttribute("The collider to grow when scrap gets added.")]
-    [SerializeField] SphereCollider _collectingCollider;
+    [SerializeField] CapsuleCollider _collectingCollider;
 
     [TooltipAttribute("The attached Rigidbody.")]
     [SerializeField] private Rigidbody _body;
 
     [TooltipAttribute("The Rigidbody's SphereCollider, because this is a ball.")]
     [SerializeField] private SphereCollider _bodyCollider;
-    [TooltipAttribute("The SphereCollider on a different gameObject that collects scrap.")]
-    [SerializeField] private SphereCollider _collectorCollider;
 
     [Header("Size")]
     [TooltipAttribute("How much mass the core Rigidbody gains from Scrap (Multiplier).")]
