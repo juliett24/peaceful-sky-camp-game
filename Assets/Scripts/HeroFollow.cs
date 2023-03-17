@@ -19,6 +19,7 @@ public class HeroFollow : MonoBehaviour
     [SerializeField] private LayerMask _layerMask = 0;
 
     private Vector2 _moveInput;
+    private Vector3 _destPosition;
     private Quaternion _destRotation;
     private Quaternion _modelDestRotation;
     private Vector3 _groundNormal;
@@ -36,6 +37,7 @@ public class HeroFollow : MonoBehaviour
         var interpDelta = 0.1f; // Not precise, TODO: use the precise DT-based formula (if needed)
         transform.rotation = Quaternion.Lerp(transform.rotation, _destRotation, interpDelta);
         _model.localRotation = Quaternion.Lerp(_model.localRotation, _modelDestRotation * Quaternion.FromToRotation(Vector3.up, Quaternion.Inverse(transform.rotation) * _groundNormal), interpDelta);
+        transform.position = new Vector3(_destPosition.x, Mathf.Lerp(transform.position.y, _destPosition.y, 0.2f), _destPosition.z);
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -49,27 +51,27 @@ public class HeroFollow : MonoBehaviour
         camRotation.x = 0f;
         _destRotation = Quaternion.Euler(camRotation) * Quaternion.Euler(0, _moveInput.x * _inputRotation.x - 90f, -_moveInput.y * _inputRotation.y);
         _modelDestRotation = Quaternion.Euler(_moveInput.x * _inputTilt.x, 0f, -_moveInput.y * _inputTilt.y);
-        transform.position = _follow.position - transform.rotation * new Vector3(_ball.ScrapRadius + _followDistance, 0, 0);
+        _destPosition = _follow.position - transform.rotation * new Vector3(_ball.ScrapRadius + _followDistance, 0, 0);
     }
 
     private void PushOutWalls()
     {
-        // var dirToFollow = (_follow.position - transform.position).normalized;
+        // var dirToFollow = (_follow.position - _destPosition).normalized;
         // var hitToward = Physics.SphereCast(
-        //     transform.position, _bodyRadius,
+        //     _destPosition, _bodyRadius,
         //     dirToFollow, out var hitTowardInfo, _ball.ScrapRadius + _followDistance, _layerMask);
         // if (hitToward)
         // {
-        //     transform.position = _follow.position + dirToFollow * (_ball.ScrapRadius + _followDistance - hitTowardInfo.distance);
+        //     _destPosition = _follow.position + dirToFollow * (_ball.ScrapRadius + _followDistance - hitTowardInfo.distance);
         // }
 
         var hitDown = Physics.SphereCast(
-            transform.position + Vector3.up * (_bodyRadius + _fromGround + _maxBallVerticalDifference), _bodyRadius,
+            _destPosition + Vector3.up * (_bodyRadius + _fromGround + _maxBallVerticalDifference), _bodyRadius,
             Vector3.down, out var hitDownInfo, _maxBallVerticalDifference + _maxBallVerticalDifference);
         if (hitDown)
         {
             _groundNormal = hitDownInfo.normal;
-            transform.position = hitDownInfo.point + _groundNormal * _fromGround;
+            _destPosition = hitDownInfo.point + Vector3.up * _fromGround;
         }
     }
 }
