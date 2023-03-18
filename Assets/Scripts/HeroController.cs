@@ -4,18 +4,77 @@ using UnityEngine.InputSystem;
 
 public class HeroController : MonoBehaviour
 {
-    [SerializeField] private float _linearAccel = 30f;
-    [SerializeField] private float _angularAccel = 90f;
     [SerializeField] private Rigidbody _body;
     [SerializeField] private Transform _cam;
 
-    private Vector2 _moveInput;
+    [Header("Base Parameters")]
+    [SerializeField] private float _linearAccel = 30f;
+    [SerializeField] private float _linearMaxSpeed = 30f;
+    [SerializeField] private float _angularAccel = 90f;
+    [SerializeField] private float _highSpeedControlForgiveness = 0.5f;
 
-    public void Update()
+    [Header("Uphill Boosting")]
+    [SerializeField] private float _extraGravity = 9.8f;
+    [TooltipAttribute("If On, Extra Gravity only applies when rolling down.")]
+    [SerializeField] private bool _easyUphill = true;
+    [TooltipAttribute("U-Inertia builds up at 1/sec while falling, slower at slopes. Ascending depletes it.")]
+    [SerializeField] private float _maxUInertia = 6f;
+    [TooltipAttribute("If U-Inertia non-zero, going up increases speed while depleting it.")]
+    [SerializeField] private float _uInertiaBoost = 4f;
+    [TooltipAttribute("Each mass unit adds this value to the Boost amount.")]
+    [SerializeField] private float _uInertiaBoostFromMass = 0.01f;
+    [TooltipAttribute("U-Inertia decays by this amount every second.")]
+    [SerializeField] private float _uInertiaBaseDecay = 0.2f;
+
+    private Vector2 _moveInput;
+    private float _uInertia = 0f;
+
+    public void FixedUpdate()
     {
         var camRotation = Quaternion.Euler(0, _cam.rotation.eulerAngles.y, 0);
-        _body.velocity += Time.deltaTime * (camRotation * new Vector3(_moveInput.x, 0, _moveInput.y) * _linearAccel);
-        _body.angularVelocity += Time.deltaTime * (camRotation * new Vector3(_moveInput.y, 0, -_moveInput.x) * _angularAccel);
+        var horizontalSpeedBefore = new Vector3(_body.velocity.x, 0f, _body.velocity.z).magnitude;
+        var newVelocity = _body.velocity + Time.fixedDeltaTime * GetAcceleration(camRotation, horizontalSpeedBefore);
+        newVelocity = LimitVelocity(newVelocity, horizontalSpeedBefore);
+        if (!_easyUphill || _body.velocity.y < 0)
+        {
+            newVelocity += Vector3.down * Time.fixedDeltaTime * _extraGravity;
+        }
+        newVelocity = ApplyUInertia(newVelocity, Time.fixedDeltaTime);
+        _body.velocity = newVelocity;
+        _body.angularVelocity += Time.fixedDeltaTime * (camRotation * new Vector3(_moveInput.y, 0, -_moveInput.x) * _angularAccel);
+    }
+
+    private Vector3 GetAcceleration(Quaternion camRotation, float linearSpeed)
+    {
+        var moveInputRotated = camRotation * new Vector3(_moveInput.x, 0, _moveInput.y);
+        var turnPriority = -Vector3.Dot(moveInputRotated, new Vector3(_body.velocity.x, 0f, _body.velocity.z).normalized) + 2f;
+        var speedControlForgiveness = 1f;
+        if (linearSpeed > _linearMaxSpeed)
+        {
+            speedControlForgiveness = (linearSpeed / _linearMaxSpeed - 1f) * _highSpeedControlForgiveness + 1f;
+        }
+        return turnPriority * moveInputRotated * _linearAccel * speedControlForgiveness;
+    }
+
+    private Vector3 LimitVelocity(Vector3 velocity, float horizontalSpeedBefore)
+    {
+        var velocityHorizontal = new Vector2(velocity.x, velocity.z);
+        if (velocityHorizontal.sqrMagnitude > _linearMaxSpeed * _linearMaxSpeed)
+        {
+            velocityHorizontal *= horizontalSpeedBefore / velocityHorizontal.magnitude;
+        }
+        return new Vector3(velocityHorizontal.x, velocity.y, velocityHorizontal.y);
+    }
+
+    private Vector3 ApplyUInertia(Vector3 velocity, float deltaTime)
+    {
+        _uInertia = Mathf.Clamp(_uInertia - deltaTime * velocity.normalized.y, 0f, _maxUInertia);
+        if (_uInertia > 0 && velocity.y > 0)
+        {
+            velocity += velocity.normalized * deltaTime * (_uInertiaBoost + _body.mass * _uInertiaBoostFromMass);
+        }
+        _uInertia -= deltaTime * _uInertiaBaseDecay;
+        return velocity;
     }
 
     public void OnMove(InputAction.CallbackContext context)
