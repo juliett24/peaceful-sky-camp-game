@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 78131877466314889}
   - component: {fileID: 1903116620995250789}
   - component: {fileID: 4990577281283270121}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: polySurface5_Monitor_new
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: -8091724870832041803}
   - component: {fileID: 5845415909255652351}
   - component: {fileID: -3385911898937287359}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Monitor_new_polySurface6
   m_TagString: Untagged
   m_Icon: {fileID: 0}

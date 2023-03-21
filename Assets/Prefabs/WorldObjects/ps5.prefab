@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6727365958674078994}
   - component: {fileID: -322106255298546888}
   - component: {fileID: -3719559909516984515}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ps5
   m_TagString: Untagged
   m_Icon: {fileID: 0}

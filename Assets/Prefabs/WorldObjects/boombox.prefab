@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2518621483124074985}
   - component: {fileID: -8865164964241325563}
   - component: {fileID: -2978760030382384601}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: boombox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,5 +147,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BallAddedMass: 0.8
-  BallAddedVolume: 1
+  BallAddedVolume: 3
   _scrapball: {fileID: 0}

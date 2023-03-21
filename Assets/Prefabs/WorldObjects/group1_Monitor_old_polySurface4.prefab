@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5090405246624308742}
   - component: {fileID: 4216811467449868354}
   - component: {fileID: 9208697664533596232}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: polySurface3_group1_Monitor_old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 295406996456898941}
   - component: {fileID: 7992064891862761084}
   - component: {fileID: 7072154094092585627}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: group1_Monitor_old_polySurface4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

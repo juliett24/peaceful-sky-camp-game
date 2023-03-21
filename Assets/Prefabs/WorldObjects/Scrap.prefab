@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 600452880245294793}
   - component: {fileID: 4359636510953048865}
   - component: {fileID: 7454607819199868904}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Scrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Clouds Material
+  m_Shader: {fileID: -6465566751694194690, guid: a0edf1da280c02d4fb140f61baee8840,
+    type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Base_Scale: 0.001
+    - _Base_Speed: 43
+    - _Base_Strength: -0.25
+    - _Curvature_Radius: 2026.8
+    - _Float: 100
+    - _Fresnel_Opacity: 0.14
+    - _Fresnel_Power: 17.3
+    - _Noise_Bump: 290.7
+    - _Noise_Edge_1: 1.48
+    - _Noise_Edge_2: -1.24
+    - _Noise_Power: 3.9
+    - _Noise_Rotation: 90
+    - _Noise_Scale: 0.0021
+    - _Noise_Speed: 53.8
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _Smooth_Max: -0.41
+    - _Smooth_Min: 1.05
+    - _Transparancy: 2.09
+    m_Colors:
+    - _Color: {r: 0, g: 0, b: 0, a: 0}
+    - _Color_1: {r: 1, g: 1, b: 1, a: 0}
+    - _Color_Highs: {r: 0.79872733, g: 0.81407, b: 0.8773585, a: 0}
+    - _Color_Valley: {r: 0.61960787, g: 0.6801915, b: 0.85882354, a: 1}
+    - _Noise_Remap_In: {r: -0.1, g: -1.68, b: 0, a: 0}
+    - _Noise_Remap_out: {r: 0, g: 5.45, b: 0, a: 0}
+    - _Noise_XYZ: {r: 1, g: 0, b: 0, a: 0}
+    - _Projection: {r: 1, g: 0, b: 0, a: 27.34}
+  m_BuildTextureStacks: []
+--- !u!114 &1054293905814815670
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7

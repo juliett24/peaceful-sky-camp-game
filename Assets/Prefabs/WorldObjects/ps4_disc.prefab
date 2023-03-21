@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8339936770532150996}
   - component: {fileID: -1416072782092233190}
   - component: {fileID: 5618567413042762142}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ps4_disc
   m_TagString: Untagged
   m_Icon: {fileID: 0}

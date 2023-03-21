@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7916486860196165037}
   - component: {fileID: 6707868778653712051}
   - component: {fileID: -6426053990852056459}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: dendy_discete
   m_TagString: Untagged
   m_Icon: {fileID: 0}

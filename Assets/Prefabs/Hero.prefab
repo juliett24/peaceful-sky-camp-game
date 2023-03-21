@@ -121,9 +121,12 @@ MonoBehaviour:
   _linearMaxSpeed: 30
   _angularAccel: 0
   _highSpeedControlForgiveness: 0.5
+  _brakeStrength: 0.5
   _extraGravity: 29.4
   _easyUphill: 1
+  _extraGravityGroundOnly: 1
   _maxUInertia: 6
+  _uInertiaDepletion: 2
   _uInertiaBoost: 4
   _uInertiaBoostFromMass: 0.01
   _uInertiaBaseDecay: 0.2
@@ -844,7 +847,10 @@ PrefabInstance:
       value: character_all 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -117334987287769072, guid: aff9dcd1614558947a10037fcfb1044c, type: 3}
+    - {fileID: -9172123663045551536, guid: aff9dcd1614558947a10037fcfb1044c, type: 3}
+    - {fileID: 4088511875904941254, guid: aff9dcd1614558947a10037fcfb1044c, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aff9dcd1614558947a10037fcfb1044c, type: 3}
