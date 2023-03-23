@@ -26,7 +26,7 @@ public class ScrapballContents : MonoBehaviour
     [SerializeField] private float _bodyScale = 1f;
     [TooltipAttribute("The scale of the ball's core, both its mesh and collider. Grows from attaching Scrap.")]
     [SerializeField] private float _coreScale = 1f;
-    [TooltipAttribute("The ball's collecting trigger grows by this much. Setting to negative prevents big objects from sticking out.")]
+    [TooltipAttribute("The ball's collecting trigger min size. Setting to negative prevents big objects from sticking out.")]
     [SerializeField] private float _coreAddedRadius = -1f;
 
     [Header("Scrap")]
@@ -51,7 +51,9 @@ public class ScrapballContents : MonoBehaviour
         {
             _scrapRadius = value;
             _bodyCollider.radius = ScrapRadius * _bodyScale;
-            _collectingCollider.radius = ScrapRadius * _coreScale - _coreAddedRadius;
+            _collectingCollider.radius = ScrapRadius * _coreScale + _coreAddedRadius;
+            _collectingCollider.height = 3f * _collectingCollider.radius;
+            _collectingCollider.center = new Vector3(0f, -0.5f * _collectingCollider.radius, 0f);
             _radiusChanged.Invoke(value);
         }
     }

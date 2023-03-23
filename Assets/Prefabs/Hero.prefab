@@ -120,6 +120,7 @@ MonoBehaviour:
   _linearAccel: 30
   _linearMaxSpeed: 30
   _angularAccel: 0
+  _fullstopMaxSpeed: 8
   _highSpeedControlForgiveness: 0.5
   _brakeStrength: 0.5
   _extraGravity: 29.4
@@ -129,6 +130,7 @@ MonoBehaviour:
   _uInertiaDepletion: 2
   _uInertiaBoost: 4
   _uInertiaBoostFromMass: 0.01
+  _uInertiaBoostMax: 24
   _uInertiaBaseDecay: 0.2
 --- !u!114 &3452570412170589160
 MonoBehaviour:
@@ -149,8 +151,8 @@ MonoBehaviour:
   AttachToTransform: {fileID: 8062001633153917422}
   _massGain: 1
   _bodyScale: 0.5
-  _coreScale: 0.4
-  _coreAddedRadius: -1
+  _coreScale: 0.5
+  _coreAddedRadius: 0
   _roundness: 0.118
   _scrapInset: 1
   _attachedObjects: []
