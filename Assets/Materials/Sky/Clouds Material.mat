@@ -39,7 +39,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Base_Scale: 0.001
-    - _Base_Speed: 43
+    - _Base_Speed: 108.8
     - _Base_Strength: -0.25
     - _Curvature_Radius: 2026.8
     - _Float: 100
