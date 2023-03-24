@@ -15,11 +15,12 @@ public class AttachableScrap : MonoBehaviour
             _scrapball = value;
             if (gameObject != value.gameObject)
             {
-                transform.parent = value.AttachToTransform;
+                Destroy(GetComponent<Rigidbody>());
                 foreach(var x in GetComponents<Collider>())
                 {
                     x.enabled = false;
                 }
+                transform.parent = value.AttachToTransform;
             }
         }
     }
@@ -36,7 +37,7 @@ public class AttachableScrap : MonoBehaviour
         if (!_scrapball) return;
 
         var obj = collider.gameObject;
-        if (obj.tag == SCRAP_TAG)
+        // if (obj.tag == SCRAP_TAG)
         {
             _scrapball.AttachObject(obj);
         }
