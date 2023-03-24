@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="16ad3a72-4549-431a-83e5-be5bdef7e6fe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Car.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Car.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Car.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Car/DefaultMaterial_Base_Color (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Car/DefaultMaterial_Base_Color (1).png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Car/DefaultMaterial_Mixed_AO.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Car/DefaultMaterial_Mixed_AO.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Car/New Material.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Car/New Material.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Scrap/Street_lights.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Scrap/Street_lights.obj.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Scrap/can.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Scrap/can.obj.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Scrap/drive_wheel.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Scrap/drive_wheel.obj.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Scrap/lights2.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Scrap/lights2.obj.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Scrap/road_cone.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Scrap/road_cone.obj.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/car_marmoset_full.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/car_marmoset_full.obj.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.peaceful-sky-game/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.peaceful-sky-game/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.peaceful-sky-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.peaceful-sky-game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Crane.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Crane.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Level/Ground 1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Level/Ground 1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Level/Ground 2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Level/Ground 2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Level/Ground.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Level/Ground.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Player/PlayerCell.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Player/PlayerCell.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Street_lights.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Street_lights.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/can.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/can.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/drive_wheel.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/drive_wheel.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/lights2.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/lights2.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/road_cone.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/road_cone.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Physics/Hero Physic Material.physicMaterial" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Physics/Hero Physic Material.physicMaterial" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Final Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Final Level.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity-Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity-Renderer.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WorldFeatures/Magnetic Area.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/WorldFeatures/Magnetic Area.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="2NL4Lwi1fFE9jaSXljsOeObHTl1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/Downloads\Camp Season 2.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Holy\Downloads" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="16ad3a72-4549-431a-83e5-be5bdef7e6fe" name="Default Changelist" comment="" />
+      <created>1679430003613</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679430003613</updated>
+      <workItem from="1679430084945" duration="3000" />
+      <workItem from="1679658876075" duration="3409000" />
+      <workItem from="1679672638288" duration="480000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

@@ -11,6 +11,7 @@ public class HeroController : MonoBehaviour
     [SerializeField] private float _linearAccel = 30f;
     [SerializeField] private float _linearMaxSpeed = 30f;
     [SerializeField] private float _angularAccel = 90f;
+    [SerializeField] private float _fullstopMaxSpeed = 8f;
     [SerializeField] private float _highSpeedControlForgiveness = 0.5f;
     [SerializeField] [Range(0, 1)] private float _brakeStrength = 0.5f;
 
@@ -30,6 +31,7 @@ public class HeroController : MonoBehaviour
     [SerializeField] private float _uInertiaBoost = 4f;
     [TooltipAttribute("Each mass unit adds this value to the Boost amount.")]
     [SerializeField] private float _uInertiaBoostFromMass = 0.01f;
+    [SerializeField] private float _uInertiaBoostMax = 24f;
     [TooltipAttribute("U-Inertia decays by this amount every second.")]
     [SerializeField] private float _uInertiaBaseDecay = 0.2f;
 
@@ -75,6 +77,10 @@ public class HeroController : MonoBehaviour
             var backwardsPull = Mathf.Max(-Vector2.Dot(velocityHorizontal.normalized, moveInputRotated), 0f);
             velocityHorizontal *= Mathf.Lerp(horizontalSpeedBefore, _linearMaxSpeed, backwardsPull * _brakeStrength) / velocityHorizontal.magnitude;
         }
+        if (_onGround && moveInputRotated == Vector3.zero && velocityHorizontal.sqrMagnitude < _fullstopMaxSpeed * _fullstopMaxSpeed)
+        {
+            velocityHorizontal = Vector2.zero;
+        }
         return new Vector3(velocityHorizontal.x, velocity.y, velocityHorizontal.y);
     }
 
@@ -84,7 +90,7 @@ public class HeroController : MonoBehaviour
         _uInertia = Mathf.Clamp(_uInertia, 0f, _maxUInertia);
         if (_uInertia > 0 && velocity.y > 0)
         {
-            velocity += velocity.normalized * deltaTime * (_uInertiaBoost + _body.mass * _uInertiaBoostFromMass);
+            velocity += velocity.normalized * deltaTime * Mathf.Min(_uInertiaBoost + _body.mass * _uInertiaBoostFromMass, _uInertiaBoostMax);
         }
         _uInertia -= deltaTime * _uInertiaBaseDecay;
         return velocity;
