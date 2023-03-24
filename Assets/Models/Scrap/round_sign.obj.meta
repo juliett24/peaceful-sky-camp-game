@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 02463559ba491974fa85d8c59ab5d6ce
+guid: 4becb306185ed2c4c857a57f0ba27495
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: ps1Mat
-    second: {fileID: 2100000, guid: b4cf61d227814f242890060981fb4b22, type: 2}
+      name: round_signMat
+    second: {fileID: 2100000, guid: 46a56f094c8122347b6e1f0fbae70252, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

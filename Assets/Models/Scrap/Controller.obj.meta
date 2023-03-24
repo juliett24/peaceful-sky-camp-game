@@ -3,7 +3,17 @@ guid: b3aab0c10c9fa3342a1194bf0ecc5292
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dendy_controllerMat
+    second: {fileID: 2100000, guid: b4cf61d227814f242890060981fb4b22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: textureEditorIsolateSelectSet_dendy_controllerMat
+    second: {fileID: 2100000, guid: b4cf61d227814f242890060981fb4b22, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

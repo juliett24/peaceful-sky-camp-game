@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 02463559ba491974fa85d8c59ab5d6ce
+guid: dbc331b8d362f1145a38794a58641d22
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: ps1Mat
-    second: {fileID: 2100000, guid: b4cf61d227814f242890060981fb4b22, type: 2}
+      name: billboard_pCube11Mat
+    second: {fileID: 2100000, guid: 72995ea38fbfc9b42ad4a02532af2e8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: billboard_pCube16Mat
+    second: {fileID: 2100000, guid: ddb9ec4892518b8468459171e2463a79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pCube10_billboardMat
+    second: {fileID: 2100000, guid: ddb9ec4892518b8468459171e2463a79, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 02463559ba491974fa85d8c59ab5d6ce
+guid: 0786f3bce0be95246a9c8c890d3d81a6
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: ps1Mat
-    second: {fileID: 2100000, guid: b4cf61d227814f242890060981fb4b22, type: 2}
+      name: pCube9_string_envMat
+    second: {fileID: 2100000, guid: ddb9ec4892518b8468459171e2463a79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: string_env_pHelix2Mat
+    second: {fileID: 2100000, guid: ddb9ec4892518b8468459171e2463a79, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

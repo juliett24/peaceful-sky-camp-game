@@ -17,7 +17,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3002
   stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
@@ -53,14 +53,14 @@ Material:
     - _Noise_Scale: 0.0021
     - _Noise_Speed: 53.8
     - _QueueControl: 0
-    - _QueueOffset: 0
+    - _QueueOffset: 2
     - _Smooth_Max: -0.41
     - _Smooth_Min: 1.05
-    - _Transparancy: 2.09
+    - _Transparancy: 0.72
     m_Colors:
     - _Color: {r: 0, g: 0, b: 0, a: 0}
     - _Color_1: {r: 1, g: 1, b: 1, a: 0}
-    - _Color_Highs: {r: 0.79872733, g: 0.81407, b: 0.8773585, a: 0}
+    - _Color_Highs: {r: 0.845995, g: 0.87302244, b: 0.9811321, a: 0}
     - _Color_Valley: {r: 0.61960787, g: 0.6801915, b: 0.85882354, a: 1}
     - _Noise_Remap_In: {r: -0.1, g: -1.68, b: 0, a: 0}
     - _Noise_Remap_out: {r: 0, g: 5.45, b: 0, a: 0}

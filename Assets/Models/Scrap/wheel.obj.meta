@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 02463559ba491974fa85d8c59ab5d6ce
+guid: eed76b7f8aa128f49a1b1aedd6d4b03a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: ps1Mat
-    second: {fileID: 2100000, guid: b4cf61d227814f242890060981fb4b22, type: 2}
+      name: wheelMat
+    second: {fileID: 2100000, guid: 7af254253ad3dff4e8d689160df13e84, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
