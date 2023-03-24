@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b05e54b4ccdb43044ad8cc84f5189ec8
+guid: ed3e4abe52be5c349a5182f05e8c88b2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Monitor_new_polySurface6Mat
-    second: {fileID: 2100000, guid: a371b4b805a7c45498d66462103645d8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: polySurface5_Monitor_newMat
-    second: {fileID: 2100000, guid: 94408f62c0bc17a49b9059a189aba4d2, type: 2}
+      name: stone1_lpMat
+    second: {fileID: 2100000, guid: 588110954dcdf4f4a94d1f7a7206e631, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
